@@ -1,4 +1,4 @@
-class Animal {
+export class Animal {
     #nombre;
     #edad;
     #img;
