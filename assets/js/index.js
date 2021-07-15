@@ -63,10 +63,10 @@ const data = (async function (){
                 const modalBody = document.querySelector(".modal-body");
                 modalBody.innerHTML = `
                 <img src="./assets/imgs/${animal.Img}" style="width: 500px" class="img-fluid" />
-                <p class="text-white text-center pt-3"> ${animal.Nombre}</p>
-                <p class="text-white text-center">${animal.Edad}</p>
+                <p class="text-white text-center pt-3" style="font-size: 12px"> ${animal.Nombre}</p>
+                <p class="text-white text-center" style="font-size: 12px">${animal.Edad}</p>
                 <hr>
-                <p class="text-white text-center">${animal.Comentarios}</p>
+                <p class="text-white text-center" style="font-size: 12px">${animal.Comentarios}</p>
                 `
             })
 
