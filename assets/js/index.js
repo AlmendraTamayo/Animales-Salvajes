@@ -6,9 +6,17 @@ const data = (async function (){
 
     const btnRegistrarElement= document.querySelector("#btnRegistrar")
 
-    const request = await fetch("/animales.json");
-    const {animales: Animales} = await request.json();
+    /* Control de errores! por si Json no existe, se borró el archivo, no existe en internet, etc.  */
+    let Animales = []
+    try{
+        const Request = await fetch("/animales.json");
+        const ParsedRequest = await Request.json();
 
+        Animales = ParsedRequest.animales
+        
+    }catch (e){
+        console.error(e)
+    }
 
     animalElement.addEventListener("change", ()=>{
         const nombreDelAnimalElegido = animalElement.value;
