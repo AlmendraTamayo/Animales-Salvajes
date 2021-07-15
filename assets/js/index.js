@@ -8,6 +8,8 @@ const data = (async function (){
 
     const btnRegistrarElement= document.querySelector("#btnRegistrar")
     const TarjetitasDeAnimales =[]; 
+
+    const playerElement = document.getElementById("player")
     /* Control de errores! por si Json no existe, se borró el archivo, no existe en internet, etc. 
     --SI hay un arreglo, por defecto arreglo vacio
     -- Si es un objeto, por defecto nulo
@@ -54,10 +56,33 @@ const data = (async function (){
             DIVBoton.classList.add("card-body","p-0")
             DIVBoton.innerHTML=`<a href="#" >
             <img class="p-1" src="./assets/imgs/audio.svg" style="width:50px"/>
-            </a>`
+            </a>`;
 
-            DIVBoton.addEventListener("click",()=>{
-                console.log(animal)
+            DIVFoto.addEventListener("click", ()=>{
+                $("#modal").modal("show");
+                const modalBody = document.querySelector(".modal-body");
+                modalBody.innerHTML = `
+                <img src="./assets/imgs/${animal.Img}" style="width: 500px" class="img-fluid" />
+                <p class="text-white text-center pt-3"> ${animal.Nombre}</p>
+                <p class="text-white text-center">${animal.Edad}</p>
+                <hr>
+                <p class="text-white text-center">${animal.Comentarios}</p>
+                `
+            })
+
+
+            DIVBoton.addEventListener("click", ()=>{
+                if(animal.Nombre==="Leon"){
+                    animal.Rugir(playerElement);
+                } else if(animal.Nombre==="Lobo"){
+                    animal.Aullar(playerElement)
+                }else if(animal.Nombre==="Aguila"){
+                    animal.Chillar(playerElement)
+                }else if(animal.Nombre==="Serpiente"){
+                    animal.Sisear(playerElement)
+                }else if(animal.Nombre==="Oso"){
+                    animal.Gruñir(playerElement)
+                }
             })
 
             DIVCard.appendChild(DIVFoto)

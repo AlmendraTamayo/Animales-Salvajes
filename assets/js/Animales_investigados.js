@@ -15,8 +15,11 @@ class Leon extends Animal{
         super(...args)
     }
 
-    Rugir(){
-        this.getSonido();
+    Rugir(player){
+        console.log("roooar")
+        player.src=`./assets/sounds/${this.Sonido}`
+        player.load();
+        player.play();
     }
 }
 class Lobo extends Animal{
@@ -26,6 +29,9 @@ class Lobo extends Animal{
 
     Aullar(){
         console.log("auuu")
+        player.src=`./assets/sounds/${this.Sonido}`
+        player.load();
+        player.play();
     }
 }
 class Oso extends Animal{
@@ -35,6 +41,9 @@ class Oso extends Animal{
 
     Gruñir(){
         console.log("grr")
+        player.src=`./assets/sounds/${this.Sonido}`
+        player.load();
+        player.play();
     }
 }
 class Serpiente extends Animal{
@@ -44,6 +53,9 @@ class Serpiente extends Animal{
 
     Sisear(){
         console.log("zzzz")
+        player.src=`./assets/sounds/${this.Sonido}`
+        player.load();
+        player.play();
     }
 }
 class Aguila extends Animal{
@@ -53,6 +65,9 @@ class Aguila extends Animal{
 
     Chillar(){
         console.log("ñiii")
+        player.src=`./assets/sounds/${this.Sonido}`
+        player.load();
+        player.play();
     }
 }
 
